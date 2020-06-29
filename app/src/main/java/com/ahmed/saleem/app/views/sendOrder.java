@@ -1,19 +1,16 @@
-package com.ahmed.saleem.app;
-
+package com.ahmed.saleem.app.views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.ahmed.saleem.app.R;
+import com.ahmed.saleem.app.models.OrderModel;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -21,38 +18,21 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import static com.ahmed.saleem.app.repairMan.pd;
-
-
-public class repairManDetails extends AppCompatActivity implements OnMapReadyCallback {
+public class sendOrder extends AppCompatActivity implements OnMapReadyCallback {
     private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
     private MapView mMapView;
-    ImageView Like ;
+    TextView phone, model, problem, problemDiscription;
+
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_repair_man_details);
+        setContentView(R.layout.activity_send_order);
 
-        Like = findViewById(R.id.fav);
+        /* ----------------------- [Start of : components initialisation ] -----------------------*/
 
-        //receiving all data input by the user as a orderModel
-        RepairmanModel repairmanModel = (RepairmanModel) getIntent().getSerializableExtra("repairmanModel");
-        assert repairmanModel != null;
-
-        TextView toolbareName,jobtitle,ratiing,order,name;
-        toolbareName = findViewById(R.id.repairmanName);
-        jobtitle = findViewById(R.id.tvJobtitne);
-        ratiing = findViewById(R.id.tvRating);
-        order = findViewById(R.id.tvOrder);
-        name = findViewById(R.id.tvname);
-
-        toolbareName.setText(""+repairmanModel.getName());
-        jobtitle.setText(""+repairmanModel.getJobTitle());
-        ratiing.setText(""+repairmanModel.getEvaluation());
-        name.setText(""+repairmanModel.getName());
-        order.setText("34"+" طلب ");
-
-        // Map view
+        //-------MAP initialising:
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY);
@@ -60,36 +40,34 @@ public class repairManDetails extends AppCompatActivity implements OnMapReadyCal
         mMapView = findViewById(R.id.mapview);
         mMapView.onCreate(mapViewBundle);
         mMapView.getMapAsync(this);
+        //-------MAP END
 
+        phone = findViewById(R.id.phoneTv);
+        model = findViewById(R.id.modelTv);
+        problem = findViewById(R.id.problemTv);
+        problemDiscription = findViewById(R.id.problemDescriptionTv);
+
+
+        //receiving all data input by the user as a orderModel
+        OrderModel orderInput = (OrderModel) getIntent().getSerializableExtra("orderInput");
+        assert orderInput != null;
+        //show user input data on the screen
+        phone.setText("" + orderInput.getPhone());
+        model.setText("" + orderInput.getModel());
+        problem.setText("" + orderInput.getProblem());
+        problemDiscription.setText("" + orderInput.getProblemDiscription());
+
+        /* ----------------------- [End of : components initialisation ] -----------------------*/
 
 
 
     }
 
-    public void back(View view) {
 
-        onBackPressed();
-    }
 
-    @Override
-    public void onBackPressed() {
-        pd.dismiss();
 
-        super.onBackPressed();
-    }
+    /* ------------------------ [Start of : Map Listener ] ------------------------*/
 
-    public void like(View view) {
-
-        Like.setImageResource(R.drawable.heart);
-
-    }
-
-    public void order(View view) {
-        ProgressDialog pd = new ProgressDialog(repairManDetails.this);
-        pd.setMessage("جاري طلب الخدمة ...");
-        pd.show();
-    }
-    /* ----------------------- [Start of : Map Listener] -----------------------*/
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -156,4 +134,18 @@ public class repairManDetails extends AppCompatActivity implements OnMapReadyCal
 
     /* ------------------------ [End of : Map Listener ] ------------------------*/
 
+
+    // عند الضغط على سهم الرجوع أو التعديل
+    public void back(View view) {
+        onBackPressed();
+    }
+
+
+    //إرسال الطلب
+
+    public void send(View view) {
+        ProgressDialog pd = new ProgressDialog(sendOrder.this);
+        pd.setMessage("جاري إرسال المعلوومات ... ");
+        pd.show();
+    }
 }

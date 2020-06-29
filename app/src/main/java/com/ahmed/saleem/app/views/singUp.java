@@ -1,10 +1,12 @@
-package com.ahmed.saleem.app;
+package com.ahmed.saleem.app.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import com.ahmed.saleem.app.R;
 
 public class singUp extends AppCompatActivity {
 

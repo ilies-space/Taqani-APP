@@ -10,13 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".singUp"
+        <activity android:name=".views.singUp"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity"
             />
         <activity
-            android:name=".login"
+            android:name=".views.login"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -25,20 +25,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".repairManDetails" />
-        <activity android:name=".repairMan" />
+        <activity android:name=".views.repairManDetails" />
+        <activity android:name=".views.repairMan" />
         <activity
-            android:name=".sendOrder"
+            android:name=".views.sendOrder"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".makeOrder"
+            android:name=".views.makeOrder"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:screenOrientation="portrait"

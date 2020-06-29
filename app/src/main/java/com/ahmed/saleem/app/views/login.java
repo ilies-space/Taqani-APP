@@ -1,10 +1,12 @@
-package com.ahmed.saleem.app;
+package com.ahmed.saleem.app.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.ahmed.saleem.app.R;
 
 public class login extends AppCompatActivity {
 

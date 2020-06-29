@@ -1,4 +1,4 @@
-package com.ahmed.saleem.app;
+package com.ahmed.saleem.app.views;
 
 
 import androidx.annotation.NonNull;
@@ -12,6 +12,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.ahmed.saleem.app.R;
+import com.ahmed.saleem.app.models.OrderModel;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -19,7 +22,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import static com.ahmed.saleem.app.ui.home.HomeFragment.pd2;
+import static com.ahmed.saleem.app.views.HomeFragment.pd2;
 
 
 public class makeOrder extends AppCompatActivity implements OnMapReadyCallback {

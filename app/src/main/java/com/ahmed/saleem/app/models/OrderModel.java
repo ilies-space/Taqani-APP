@@ -1,4 +1,4 @@
-package com.ahmed.saleem.app;
+package com.ahmed.saleem.app.models;
 
 
 import java.io.Serializable;

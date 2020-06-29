@@ -1,4 +1,4 @@
-package com.ahmed.saleem.app;
+package com.ahmed.saleem.app.views;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,11 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static com.ahmed.saleem.app.ui.home.HomeFragment.pd2;
+import com.ahmed.saleem.app.R;
+import com.ahmed.saleem.app.models.RepairmanModel;
+
+import static com.ahmed.saleem.app.views.HomeFragment.pd2;
+
 
 public class repairMan extends AppCompatActivity {
     GridView gridview ;

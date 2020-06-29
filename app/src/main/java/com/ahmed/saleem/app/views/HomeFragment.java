@@ -1,4 +1,4 @@
-package com.ahmed.saleem.app.ui.home;
+package com.ahmed.saleem.app.views;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,8 +16,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.ahmed.saleem.app.R;
-import com.ahmed.saleem.app.makeOrder;
-import com.ahmed.saleem.app.repairMan;
 
 public class HomeFragment extends Fragment {
     public static ProgressDialog pd2;

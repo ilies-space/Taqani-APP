@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".login"
+    tools:context=".views.login"
     android:background="#fff"
 
     android:fitsSystemWindows="true">
@@ -80,7 +80,6 @@
                 android:background="@android:color/darker_gray"/>
             <TextView
                 android:layout_weight="1"
-                android:id="@+id/link_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -96,7 +95,7 @@
 
         <Button
             android:onClick="singUp"
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_new"
             android:textSize="23sp"
             android:textColor="#ffc048"
             android:background="@drawable/goldborder"
@@ -107,7 +106,7 @@
             android:text="إنشاء اشتراك جديد"/>
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_fb"
             android:textSize="23sp"
             android:textColor="@android:color/white"
             android:background="@drawable/bgfacebook"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#dcdde1"
-    tools:context=".makeOrder" >
+    tools:context=".views.makeOrder" >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
